@@ -8,11 +8,23 @@ android {
         applicationId "com.lengjiye.baselib"
     }
 
+    signingConfigs {
+        wanAndroid {
+            //绝对路径和相对路径都可以
+            storeFile file("../keystores/lengjiye.keystore")  //签名文件
+            storePassword "ljy019916"                       //密码
+            keyAlias "lengjiye"
+            keyPassword "ljy019916"
+        }
+    }
+
     buildTypes {
         debug {}
         release {
-            // 移除无用的resource文件
-            shrinkResources true
+            debuggable false
+            minifyEnabled true
+            zipAlignEnabled true
+            signingConfig signingConfigs.wanAndroid
         }
     }
 }
@@ -22,7 +34,7 @@ dependencies {
     implementation project(':baselib:baseparameter')
     implementation project(':baselib:network')
     implementation project(':baselib:networkscope')
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }
