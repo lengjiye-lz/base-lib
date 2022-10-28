@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
-apply from: '../config.gradle'
+apply from: '../libconfig.gradle'
 android {
     defaultConfig {
         applicationId "com.lengjiye.baselib"
@@ -34,7 +34,6 @@ dependencies {
     implementation project(':baselib:baseparameter')
     implementation project(':baselib:network')
     implementation project(':baselib:networkscope')
-    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }
